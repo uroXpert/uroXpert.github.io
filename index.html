@@ -21,7 +21,6 @@
       align-items: center;
     }
 
-    /* 頂部標題區 */
     header {
       width: 100%;
       background-color: #1a3a5c;
@@ -44,14 +43,12 @@
       color: #a8c8e8;
     }
 
-    /* 分隔線 */
     .divider {
       width: 100%;
       height: 4px;
       background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
     }
 
-    /* 索引區 */
     main {
       width: 100%;
       max-width: 900px;
@@ -59,24 +56,31 @@
       flex: 1;
     }
 
+    /* 電腦版：2列3行 */
     .index-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
-    /* 預留卡片樣式（之後新增索引用）*/
+    /* 手機版：直列6個 */
+    @media (max-width: 600px) {
+      .index-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .card {
       background-color: #ffffff;
       border: 1px solid #c8dff0;
       border-radius: 8px;
-      padding: 28px 20px;
+      padding: 40px 20px;
       text-align: center;
       text-decoration: none;
       color: #1a3a5c;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       transition: all 0.2s ease;
       box-shadow: 0 2px 6px rgba(26,58,92,0.08);
     }
@@ -88,13 +92,6 @@
       box-shadow: 0 6px 16px rgba(26,58,92,0.2);
     }
 
-    .card .icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    /* 頁尾 */
     footer {
       width: 100%;
       background-color: #1a3a5c;
@@ -116,7 +113,12 @@
 
   <main>
     <div class="index-grid">
-      <!-- 索引卡片將在這裡陸續新增 -->
+      <a class="card" href="prostate/index.html">攝護腺疾病</a>
+      <a class="card" href="tumor/index.html">泌尿道腫瘤</a>
+      <a class="card" href="stone/index.html">泌尿道結石</a>
+      <a class="card" href="hernia/index.html">疝氣</a>
+      <a class="card" href="others/index.html">其他泌尿醫學</a>
+      <a class="card" href="doctor/index.html">醫師介紹</a>
     </div>
   </main>
 
