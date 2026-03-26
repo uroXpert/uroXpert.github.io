@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>輸尿管導管（雙J管）置入術後衛教｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --red: #a32d2d;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.85;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ───── 網站 Header ───── */
+    .site-header {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: white;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a8c8e8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
+    }
+
+    /* ───── 導覽列 ───── */
+    nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--site-dark);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    /* ───── 麵包屑 ───── */
+    .breadcrumb {
+      width: 100%;
+      max-width: 800px;
+      padding: 16px 20px 0;
+      font-size: 0.82rem;
+      color: #8aaac4;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a {
+      color: var(--site-accent);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    /* ───── 主內容容器 ───── */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 24px 20px 40px;
+      flex: 1;
+    }
+
+    /* ───── 文章 Header ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white;
+      padding: 44px 40px 36px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #c8e4f7;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 12px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 22px; font-weight: 700;
+      line-height: 1.45; margin-bottom: 8px;
+    }
+    .article-header p { color: rgba(255,255,255,0.65); font-size: 13px; }
+
+    /* ───── 內容區塊 ───── */
+    .section {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-num {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px; font-weight: 700; color: var(--blue);
+    }
+    .section-body { padding: 20px 24px; }
+    .section-body p { color: var(--text-muted); margin-bottom: 12px; }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    .box {
+      border-radius: 8px; padding: 13px 16px;
+      margin: 14px 0; display: flex; gap: 11px; align-items: flex-start;
+    }
+    .box .ico { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .box p { margin: 0; font-size: 14px; line-height: 1.8; }
+    .box.amber { background: var(--amber-light); border-left: 3px solid var(--amber); }
+    .box.amber p { color: #5a3c08; }
+    .box.blue  { background: var(--blue-light);  border-left: 3px solid var(--blue-mid); }
+    .box.blue p  { color: #1a4a6b; }
+
+    .sub { font-size: 13px; font-weight: 600; letter-spacing: .5px; margin: 16px 0 8px; }
+    .sub.blue  { color: var(--blue-mid); }
+    .sub.red   { color: var(--red); }
+    .sub.teal  { color: var(--teal); }
+
+    .blist { list-style: none; margin: 0; }
+    .blist li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid #f0f3f6;
+      font-size: 14px; color: var(--text-muted); line-height: 1.75;
+    }
+    .blist li:last-child { border-bottom: none; }
+    .blist li::before {
+      content: '●'; color: var(--blue-mid); font-size: 8px;
+      flex-shrink: 0; margin-top: 7px;
+    }
+    .blist.red li { color: var(--red); }
+    .blist.red li::before { color: var(--red); }
+
+    .steps { list-style: none; margin: 0; }
+    .steps li {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 10px 0; border-bottom: 1px solid #f0f3f6;
+      font-size: 14px; color: var(--text-muted); line-height: 1.75;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .step-n {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--blue-light); color: var(--blue);
+      font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    .dur-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+    .dur-card {
+      flex: 1; min-width: 130px; border-radius: 8px;
+      padding: 14px; border: 1px solid var(--border); text-align: center;
+    }
+    .dur-card .dt { font-size: 15px; font-weight: 700; margin: 4px 0; }
+    .dur-card .dd { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .dur-card.s { background: var(--teal-light); border-color: #9fd6cc; }
+    .dur-card.s .dt { color: var(--teal); }
+    .dur-card.m { background: var(--blue-light); border-color: #b5d4f4; }
+    .dur-card.m .dt { color: var(--blue-mid); }
+    .dur-card.l { background: var(--amber-light); border-color: #f0d090; }
+    .dur-card.l .dt { color: var(--amber); }
+
+    strong.kw { color: var(--text); }
+
+    /* ───── 返回按鈕列 ───── */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--site-dark);
+      border: 1px solid #c8dff0;
+    }
+    .btn-secondary:hover {
+      background: var(--site-dark);
+      color: white;
+    }
+    .btn-primary {
+      background: var(--site-dark);
+      color: white;
+      border: 1px solid var(--site-dark);
+    }
+    .btn-primary:hover {
+      background: var(--site-accent);
+      border-color: var(--site-accent);
+    }
+
+    /* ───── 文章來源說明 ───── */
+    .article-footer {
+      background: #f0f4f8;
+      border: 1px solid #c8dff0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 12px;
+      color: #8aaac4;
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+
+    /* ───── 網站 Footer ───── */
+    .site-footer {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .section-body { padding: 16px; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 網站 Header -->
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>泌尿道結石</h1>
+  </header>
+  <div class="divider"></div>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link active" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <!-- 麵包屑 -->
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../stone/index.html">泌尿道結石</a>
+    <span>›</span>
+    輸尿管導管（雙J管）置入術後衛教
+  </div>
+
+  <!-- 主內容 -->
+  <div class="container">
+
+    <!-- 文章標題 -->
+    <div class="article-header">
+      <div class="header-tag">泌尿科衛教</div>
+      <h2>輸尿管導管（雙J管）<br>置入術後衛教</h2>
+      <p>Ureteral Stent (Double-J Stent) Post-Procedure Patient Education</p>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-num">1</div>
+        <h3>什麼是輸尿管導管（雙J管）？</h3>
+      </div>
+      <div class="section-body">
+        <p>雙J管（Double-J Stent，又稱輸尿管導管）是一種細長、柔軟的管狀醫療器材，材質通常為矽膠或聚氨酯，常用導管的直徑約6 French（0.2公分）。</p>
+        <p>管子的兩端皆設計成捲曲的「J」形，上端捲曲固定於腎盂，下端捲曲固定於膀胱，因此得名「雙J管」。這樣的設計可防止管子在體內移位或脫落。</p>
+        <p>雙J管由泌尿科醫師透過內視鏡經由尿道置入，整個過程通常在麻醉或鎮靜下進行。</p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-num">2</div>
+        <h3>輸尿管導管（雙J管）的功能</h3>
+      </div>
+      <div class="section-body">
+        <p>雙J管是現代泌尿外科不可或缺的工具，主要用於以下情況：</p>
+        <ul class="blist">
+          <li><span><strong class="kw">維持尿液引流：</strong>當輸尿管因結石、腫瘤、狹窄或手術後腫脹而阻塞時，雙J管可保持尿液從腎臟順利流入膀胱，預防腎水腫與腎功能損傷。</span></li>
+          <li><span><strong class="kw">支撐輸尿管：</strong>在結石手術或輸尿管手術後，暫時性的雙J管置入，可以作為輸尿管的內部支架，協助輸尿管癒合並防止術後狹窄。</span></li>
+          <li><span><strong class="kw">被動擴張輸尿管：</strong>在接受輸尿管鏡手術前預先置入，可使輸尿管逐漸擴張，讓後續手術更容易進行。</span></li>
+          <li><span><strong class="kw">保護輸尿管：</strong>在複雜的腹部或婦科手術中提前置入，方便手術醫師辨識輸尿管，減少手術中誤傷的風險。</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-num">3</div>
+        <h3>置入後可能出現的症狀</h3>
+      </div>
+      <div class="section-body">
+        <p>由於雙J管屬於體內異物，置入後常見以下症狀。這些症狀多為暫時性，管子取出後通常會消失，請放心。</p>
+        <p class="sub blue">常見症狀（大多數病患都會經歷）</p>
+        <ul class="blist">
+          <li><span><strong class="kw">血尿：</strong>尿液呈淡粉紅色或帶血絲，在置入初期最常見。多喝水可加速改善。</span></li>
+          <li><span><strong class="kw">頻尿與尿急：</strong>膀胱端的雙J管刺激膀胱，可能導致頻繁尿意或強烈尿急感。</span></li>
+          <li><span><strong class="kw">解尿灼熱感或排尿不適：</strong>解尿時感到輕微灼熱或疼痛，為正常現象。</span></li>
+          <li><span><strong class="kw">腰側或下腹悶痛：</strong>排尿時因膀胱收縮，尿液可能短暫逆流至腎臟，引發腰側或下腹悶脹不適感。</span></li>
+        </ul>
+        <p class="sub red" style="margin-top:20px">⚠️ 需要立即就醫的警示症狀</p>
+        <p style="font-size:14px;">若出現以下情況，請立即回診或前往急診，切勿拖延：</p>
+        <ul class="blist red">
+          <li>發燒（體溫超過38°C）、畏寒或顫抖，可能為泌尿道感染或敗血症的徵兆</li>
+          <li>嚴重或持續加劇的腰部、下腹或鼠蹊部疼痛，止痛藥無法緩解</li>
+          <li>大量鮮血尿或出現血塊，或完全無法排尿</li>
+          <li>噁心、嘔吐合併無法進食</li>
+          <li>懷疑管子脫出（如在尿道口看到管子露出）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-num">4</div>
+        <h3>居家注意事項</h3>
+      </div>
+      <div class="section-body">
+        <p class="sub teal" style="margin-top:0">應該做的事</p>
+        <ul class="blist">
+          <li><span><strong class="kw">多喝水：</strong>每天建議飲水量達2,000～3,000毫升，有助沖洗尿道、減少感染風險及改善血尿（註：少數病患被醫師要求必須限制水份攝取）。</span></li>
+          <li><span><strong class="kw">按時服藥：</strong>按照醫囑服用抗生素、止痛藥或膀胱舒緩藥物，可明顯改善不適症狀。</span></li>
+          <li><span><strong class="kw">按時回診：</strong>務必在醫師指定時間回診，並安排時間取出雙J管。切勿忘記或延誤，以免發生嚴重併發症。</span></li>
+          <li><span><strong class="kw">適度活動：</strong>術後可進行一般日常活動，輕度步行有助恢復，視個人狀況逐步調整。</span></li>
+          <li><span><strong class="kw">注意個人衛生：</strong>保持會陰部清潔，降低感染風險。</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-num">5</div>
+        <h3>雙J管通常放置多久？</h3>
+      </div>
+      <div class="section-body">
+        <p>雙J管的放置時間依置入原因及個別狀況而異，由您的泌尿科醫師決定。</p>
+        <div class="dur-row">
+          <div class="dur-card s">
+            <div>⏱️</div>
+            <div class="dt">短期（1個月以內）</div>
+            <div class="dd">輸尿管鏡手術後支撐癒合、結石手術後引流、預防術後輸尿管狹窄</div>
+          </div>
+          <div class="dur-card m">
+            <div>📅</div>
+            <div class="dt">中期（1至3個月）</div>
+            <div class="dd">輸尿管手術後，或發現輸尿管狹窄或其他病變，有助恢復通暢</div>
+          </div>
+          <div class="dur-card l">
+            <div>🗓️</div>
+            <div class="dt">長期（6至12個月）</div>
+            <div class="dd">不可逆的輸尿管狹窄或阻塞，需長期置放，必須定期更換</div>
+          </div>
+        </div>
+        <div class="box amber">
+          <span class="ico">⚠️</span>
+          <p><strong>特別提醒——「被遺忘的雙J管」：</strong>若未依時取出，管子表面可能逐漸積累礦物質（俗稱結垢或鈣化），導致管子嵌頓，最終可能需要更複雜的手術處理，嚴重者甚至危及腎功能。請務必記住並按時回診取管。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-num">6</div>
+        <h3>如何取出雙J管？</h3>
+      </div>
+      <div class="section-body">
+        <p>雙J管的取出是一個相對簡單的門診小手術，大多數病患不需要住院。</p>
+        <p class="sub" style="margin-top:12px; color:var(--text-muted)">步驟說明</p>
+        <ul class="steps">
+          <li>
+            <div class="step-n">1</div>
+            <div><strong class="kw">局部麻醉或表面麻醉：</strong>醫師在尿道口施以麻醉凝膠，多數病患僅感輕微不適。極少數複雜的情況，才需要靜脈鎮靜或全身麻醉。</div>
+          </li>
+          <li>
+            <div class="step-n">2</div>
+            <div><strong class="kw">置入膀胱鏡：</strong>醫師將細小的軟式或硬式膀胱鏡（cystoscope）經由尿道進入膀胱，直接目視觀察雙J管的膀胱端捲曲。</div>
+          </li>
+          <li>
+            <div class="step-n">3</div>
+            <div><strong class="kw">夾取拔除：</strong>利用抓鉗夾住雙J管的膀胱端，緩慢輕柔地將整條管子從輸尿管及腎臟拉出，整個過程通常僅需數分鐘。</div>
+          </li>
+          <li>
+            <div class="step-n">4</div>
+            <div><strong class="kw">術後觀察：</strong>取管後稍作休息，確認排尿正常即可返家。取管後數日內仍可能有輕微血尿，屬正常現象。</div>
+          </li>
+        </ul>
+        <div class="box blue" style="margin-top:18px">
+          <span class="ico">📌</span>
+          <p><strong>關於取出線（retrieval string）：</strong>某些情況下，醫師可能在管子尾端留有一條細線從尿道口延伸至體外，可能用醫療用膠帶貼於身體表面，此情況下取管更為簡單，醫護人員輕拉引線即可取出，不需膀胱鏡。請勿自行拉扯，須由醫護人員操作。當不慎拉到這條線時，可能導致管子被拉出體外，導致暫時性的尿液滲出，此時請盡快安排就診，將剩餘的管子移除即可。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 資料來源 -->
+    <div class="article-footer">
+      本衛教資料依據 Cleveland Clinic、Memorial Sloan Kettering Cancer Center 及 PubMed 相關醫學文獻整理編寫，僅供衛教參考之用。如有任何疑問或身體不適，請隨時聯繫您的主治醫師或護理師，切勿自行判斷或延誤就醫。
+    </div>
+
+    <!-- 返回按鈕 -->
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../stone/index.html">← 回到泌尿道結石</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <!-- 網站 Footer -->
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
