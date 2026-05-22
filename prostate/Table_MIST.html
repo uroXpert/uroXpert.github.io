@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>攝護腺微創手術核心比較表｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ───── 網站 Header ───── */
+    .site-header {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: white;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a8c8e8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
+    }
+
+    /* ───── 導覽列 ───── */
+    nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--site-dark);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    /* ───── 麵包屑 ───── */
+    .breadcrumb {
+      width: 100%;
+      max-width: 1000px;
+      padding: 16px 20px 0;
+      font-size: 0.82rem;
+      color: #8aaac4;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--site-accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    /* ───── 主內容 ───── */
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      padding: 24px 20px 60px;
+      flex: 1;
+    }
+
+    /* ───── 文章標題區 ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #c8e4f7;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 12px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 22px; font-weight: 700;
+      line-height: 1.45; margin-bottom: 8px;
+    }
+    .article-header p { color: rgba(255,255,255,0.65); font-size: 13px; }
+
+    /* ───── 比較表 ───── */
+    .table-wrapper {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    /* 表頭 */
+    thead tr {
+      background: var(--site-dark);
+      color: white;
+    }
+    thead th {
+      padding: 16px 18px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 14px;
+    }
+    thead th:first-child {
+      text-align: left;
+      width: 160px;
+      background: #152e4a;
+    }
+
+    /* 手術名稱列顏色 */
+    .col-laser { background: #1a5c8a; }
+    .col-steam  { background: #0f6b5a; }
+    .col-lift   { background: #7a5210; }
+
+    /* 內容列 */
+    tbody tr {
+      border-bottom: 1px solid #eef2f7;
+      transition: background 0.15s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f7fafd; }
+
+    /* 奇偶列底色 */
+    tbody tr:nth-child(even) { background: #fafcfe; }
+    tbody tr:nth-child(even):hover { background: #f0f5fb; }
+
+    td {
+      padding: 14px 18px;
+      color: var(--text-muted);
+      text-align: center;
+      vertical-align: top;
+      line-height: 1.75;
+    }
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--site-dark);
+      background: #f0f5fb;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* 標籤樣式 */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .badge-best  { background: #e2f4f1; color: var(--teal); }
+    .badge-mid   { background: var(--blue-light); color: var(--blue-mid); }
+    .badge-low   { background: #fdf4e3; color: var(--amber); }
+    .badge-warn  { background: #fdeaea; color: #a32d2d; }
+    .badge-good  { background: #e2f4f1; color: #0a6b5a; }
+
+    /* 適合對象列 */
+    .fit-list {
+      text-align: left;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .fit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .fit-list li::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* 注意提示 */
+    .note-box {
+      background: var(--amber-light);
+      border-left: 3px solid var(--amber);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #5a3c08;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .note-box strong { color: var(--amber); }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--site-dark);
+      border: 1px solid #c8dff0;
+    }
+    .btn-secondary:hover { background: var(--site-dark); color: white; }
+    .btn-primary {
+      background: var(--site-dark);
+      color: white;
+      border: 1px solid var(--site-dark);
+    }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    /* ───── 網站 Footer ───── */
+    .site-footer {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    /* ───── 手機版 ───── */
+    @media (max-width: 700px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .table-wrapper { overflow-x: auto; }
+      table { min-width: 560px; }
+      thead th, td { padding: 12px 12px; font-size: 13px; }
+      td:first-child { white-space: normal; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 網站 Header -->
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>攝護腺疾病</h1>
+  </header>
+  <div class="divider"></div>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link active" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <!-- 麵包屑 -->
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../prostate/index.html">攝護腺疾病</a>
+    <span>›</span>
+    攝護腺微創手術核心比較表
+  </div>
+
+  <!-- 主內容 -->
+  <div class="container">
+
+    <!-- 文章標題 -->
+    <div class="article-header">
+      <div class="header-tag">手術比較</div>
+      <h2>攝護腺微創手術核心比較表</h2>
+      <p>Minimally Invasive Surgical Therapy (MIST) for Benign Prostatic Hyperplasia</p>
+    </div>
+
+    <!-- 比較表 -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>評估項目</th>
+            <th class="col-laser">🔵 雷射手術</th>
+            <th class="col-steam">🟢 水蒸氣消融術</th>
+            <th class="col-lift">🟡 攝護腺拉提術</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>手術原理</td>
+            <td>使用高能雷射將攝護腺剜除、切割或汽化</td>
+            <td>將高溫水蒸氣注入攝護腺進行消融</td>
+            <td>使用鎳鈦合金釘將兩側肥大組織往旁拉開</td>
+          </tr>
+          <tr>
+            <td>改善排尿效果</td>
+            <td><span class="badge badge-best">效果最佳</span></td>
+            <td><span class="badge badge-mid">效果中等</span></td>
+            <td><span class="badge badge-mid">效果中等</span></td>
+          </tr>
+          <tr>
+            <td>復發率</td>
+            <td><span class="badge badge-best">最低</span></td>
+            <td><span class="badge badge-warn">較高</span></td>
+            <td><span class="badge badge-warn">較高</span></td>
+          </tr>
+          <tr>
+            <td>適合腺體大小</td>
+            <td>適合各種體積</td>
+            <td>適合中等體積</td>
+            <td>適合中等或較小體積</td>
+          </tr>
+          <tr>
+            <td>手術時間</td>
+            <td>約 1 至 2 小時</td>
+            <td>約 10 至 15 分鐘</td>
+            <td>約 15 至 30 分鐘</td>
+          </tr>
+          <tr>
+            <td>麻醉方式</td>
+            <td>半身或全身麻醉</td>
+            <td>半身或全身麻醉</td>
+            <td>半身或全身麻醉</td>
+          </tr>
+          <tr>
+            <td>留置尿管</td>
+            <td>術後約 2 天</td>
+            <td>約 7 至 14 天</td>
+            <td>通常不需要或 1 天</td>
+          </tr>
+          <tr>
+            <td>逆行性射精</td>
+            <td><span class="badge badge-warn">&gt; 70%</span></td>
+            <td><span class="badge badge-good">&lt; 5%</span></td>
+            <td><span class="badge badge-good">極少（&lt; 1%）</span></td>
+          </tr>
+          <tr>
+            <td>術後尿失禁</td>
+            <td><span class="badge badge-low">低（約 2%）</span></td>
+            <td><span class="badge badge-good">低</span></td>
+            <td><span class="badge badge-good">低</span></td>
+          </tr>
+          <tr>
+            <td>住院天數</td>
+            <td>3 至 4 天</td>
+            <td>0 至 1 天</td>
+            <td>0 至 1 天</td>
+          </tr>
+          <tr>
+            <td>手術費用（自費）</td>
+            <td>約 16 至 18 萬</td>
+            <td>約 16 至 18 萬</td>
+            <td>約 18 至 22 萬</td>
+          </tr>
+          <tr>
+            <td>適合什麼人？</td>
+            <td>
+              <ul class="fit-list">
+                <li>希望最大化改善排尿狀況</li>
+                <li>希望一勞永逸</li>
+                <li>不需要保留射精功能</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="fit-list">
+                <li>想要保留射精功能</li>
+                <li>可接受術後放置尿管 7 至 14 天</li>
+                <li>可接受日後可能需要再治療</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="fit-list">
+                <li>想要保留射精功能</li>
+                <li>可接受日後可能需要再治療</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 注意事項 -->
+    <div class="note-box">
+      <strong>⚠️ 提醒：</strong>以上資料僅供參考，實際手術方式與費用依個人狀況及醫療院所而有所不同。建議與您的泌尿科醫師詳細討論，選擇最適合您的治療方案。
+    </div>
+
+    <!-- 返回按鈕 -->
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../prostate/index.html">← 回到攝護腺疾病</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <!-- 網站 Footer -->
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
