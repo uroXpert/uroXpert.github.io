@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>醫師介紹｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ───── 網站 Header ───── */
+    .site-header {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: white;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a8c8e8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
+    }
+
+    /* ───── 導覽列 ───── */
+    nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--site-dark);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    /* ───── 主內容 ───── */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 40px 20px 60px;
+      flex: 1;
+    }
+
+    /* ───── 醫師名片 Hero ───── */
+    .doctor-hero {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      border-radius: 14px;
+      padding: 44px 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .doctor-hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .doctor-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem;
+      flex-shrink: 0;
+    }
+    .doctor-info { flex: 1; }
+    .doctor-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #c8e4f7;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .doctor-name-zh {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 26px; font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 4px;
+    }
+    .doctor-name-en {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .doctor-degree {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 4px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 1px;
+    }
+
+    /* ───── 內容區塊 ───── */
+    .section {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      background: #fafcfe;
+    }
+    .sec-icon {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px; font-weight: 700; color: var(--blue);
+      letter-spacing: 2px;
+    }
+    .section-body { padding: 8px 24px 16px; }
+
+    /* ───── 清單 ───── */
+    .profile-list { list-style: none; margin: 0; padding: 0; }
+    .profile-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid #f0f3f6;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .profile-list li:last-child { border-bottom: none; }
+    .profile-list li::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue-mid);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .profile-list.teal li::before { background: var(--teal); }
+
+    /* 現職特別標示 */
+    .position-list { list-style: none; margin: 0; padding: 0; }
+    .position-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid #f0f3f6;
+    }
+    .position-item:last-child { border-bottom: none; }
+    .position-badge {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+    .badge-primary { background: var(--blue-light); color: var(--blue-mid); }
+    .badge-academic { background: var(--teal-light); color: var(--teal); }
+    .badge-society { background: #f3eefa; color: #6a3fa0; }
+    .position-text {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.75;
+    }
+
+    /* 專長標籤雲 */
+    .expertise-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 8px 0;
+    }
+    .expertise-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f3f6;
+      font-size: 14px;
+    }
+    .expertise-item:last-child { border-bottom: none; }
+    .expertise-label {
+      font-weight: 700;
+      color: var(--site-dark);
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 110px;
+    }
+    .expertise-desc { color: var(--text-muted); line-height: 1.75; }
+
+    /* 研究論文 */
+    .research-box {
+      background: var(--blue-light);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 12px 0 4px;
+      font-size: 14px;
+      color: #1a4a6b;
+      line-height: 1.9;
+    }
+    .research-count {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue-mid);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .research-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .topic-tag {
+      background: white;
+      border: 1px solid #b5d4f4;
+      color: var(--blue-mid);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--site-dark); color: white;
+      border: 1px solid var(--site-dark);
+    }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    /* ───── 網站 Footer ───── */
+    .site-footer {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .doctor-hero { flex-direction: column; text-align: center; padding: 32px 24px; gap: 20px; }
+      .section-body { padding: 8px 16px 16px; }
+      .expertise-label { min-width: 90px; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 網站 Header -->
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>醫師介紹</h1>
+  </header>
+  <div class="divider"></div>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link active" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <!-- 主內容 -->
+  <div class="container">
+
+    <!-- 醫師名片 -->
+    <div class="doctor-hero">
+      <div class="doctor-info">
+        <div class="doctor-name-zh">何承勳 醫師</div>
+        <div class="doctor-name-en">Chen-Hsun Ho, MD, PhD</div>
+        <div class="doctor-degree">醫學博士</div>
+      </div>
+    </div>
+
+    <!-- 現職 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🏥</div>
+        <h3>現　職</h3>
+      </div>
+      <div class="section-body">
+        <ul class="position-list">
+          <li class="position-item">
+            <span class="position-badge badge-primary">醫院</span>
+            <span class="position-text">新光吳火獅紀念醫院　泌尿科　主任</span>
+          </li>
+          <li class="position-item">
+            <span class="position-badge badge-academic">學術</span>
+            <span class="position-text">輔仁大學醫學系　教授</span>
+          </li>
+          <li class="position-item">
+            <span class="position-badge badge-society">學會</span>
+            <span class="position-text">台灣泌尿科醫學會（TUA）內視鏡委員會　副主委</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 學歷 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🎓</div>
+        <h3>學　歷</h3>
+      </div>
+      <div class="section-body">
+        <ul class="profile-list">
+          <li>國立臺灣大學　醫學系　醫學士</li>
+          <li>國立臺灣大學　臨床醫學研究所　博士</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 經歷 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">📋</div>
+        <h3>經　歷</h3>
+      </div>
+      <div class="section-body">
+        <ul class="profile-list">
+          <li>臺大醫院　泌尿部　住院醫師</li>
+          <li>臺大醫院　泌尿部　主治醫師</li>
+          <li>臺北慈濟醫院　泌尿科　主治醫師</li>
+          <li>雙和醫院　泌尿科　主治醫師</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 臨床專長 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔬</div>
+        <h3>臨床專長</h3>
+      </div>
+      <div class="section-body">
+        <div class="expertise-grid">
+          <div class="expertise-item">
+            <span class="expertise-label">攝護腺疾病</span>
+            <span class="expertise-desc">攝護腺肥大微創手術</span>
+          </div>
+          <div class="expertise-item">
+            <span class="expertise-label">尿路結石</span>
+            <span class="expertise-desc">軟式輸尿管鏡及各類結石手術</span>
+          </div>
+          <div class="expertise-item">
+            <span class="expertise-label">泌尿道腫瘤</span>
+            <span class="expertise-desc">腎臟癌、膀胱癌、攝護腺癌治療</span>
+          </div>
+          <div class="expertise-item">
+            <span class="expertise-label">機械手臂</span>
+            <span class="expertise-desc">達文西機械手臂手術</span>
+          </div>
+          <div class="expertise-item">
+            <span class="expertise-label">疝氣手術</span>
+            <span class="expertise-desc">各式疝氣微創手術</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 研究論文 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">📄</div>
+        <h3>歷年研究論文</h3>
+      </div>
+      <div class="section-body">
+        <div class="research-box">
+          <span class="research-count">70+ 篇</span>
+          截至 2026 年 5 月，已於國際知名 SCI 期刊發表學術論文達 70 餘篇，研究領域廣泛深入。
+          <div class="research-topics">
+            <span class="topic-tag">攝護腺肥大治療</span>
+            <span class="topic-tag">尿路結石手術</span>
+            <span class="topic-tag">泌尿道腫瘤</span>
+            <span class="topic-tag">達文西機械手臂手術</span>
+            <span class="topic-tag">微創疝氣手術</span>
+            <span class="topic-tag">男性健康</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 返回按鈕 -->
+    <div class="nav-buttons">
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <!-- 網站 Footer -->
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
