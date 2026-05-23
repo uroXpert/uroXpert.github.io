@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷射攝護腺剜除術｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --red: #a32d2d;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ───── 網站 Header ───── */
+    .site-header {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: white;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a8c8e8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
+    }
+
+    /* ───── 導覽列 ───── */
+    nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--site-dark);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    /* ───── 麵包屑 ───── */
+    .breadcrumb {
+      width: 100%;
+      max-width: 800px;
+      padding: 16px 20px 0;
+      font-size: 0.82rem;
+      color: #8aaac4;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--site-accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    /* ───── 主內容 ───── */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 24px 20px 60px;
+      flex: 1;
+    }
+
+    /* ───── 文章標題區 ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white;
+      padding: 44px 40px 36px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #c8e4f7;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 24px; font-weight: 700;
+      line-height: 1.45; margin-bottom: 8px;
+    }
+    .article-header p { color: rgba(255,255,255,0.65); font-size: 13px; }
+
+    /* ───── 內容區塊 ───── */
+    .section {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px; font-weight: 700; color: var(--blue);
+    }
+    .section-body { padding: 20px 24px; }
+    .section-body p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 0;
+    }
+
+    /* ───── 項目清單 ───── */
+    .item-list { list-style: none; margin: 0; padding: 0; }
+    .item-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid #f0f3f6;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .item-list li:last-child { border-bottom: none; }
+    .item-label {
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .item-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue-mid);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .item-dot.teal { background: var(--teal); }
+    .item-dot.amber { background: var(--amber); }
+    .item-dot.red { background: var(--red); }
+
+    /* ───── 警示框 ───── */
+    .box {
+      border-radius: 8px; padding: 14px 18px;
+      margin: 16px 0; display: flex; gap: 12px; align-items: flex-start;
+    }
+    .box .ico { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .box p { margin: 0; font-size: 14px; line-height: 1.85; }
+    .box.blue { background: var(--blue-light); border-left: 3px solid var(--blue-mid); }
+    .box.blue p { color: #1a4a6b; }
+    .box.amber { background: var(--amber-light); border-left: 3px solid var(--amber); }
+    .box.amber p { color: #5a3c08; }
+
+    /* ───── 流程卡片 ───── */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .flow-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .flow-card .fc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--blue-mid);
+      margin-bottom: 6px;
+    }
+    .flow-card .fc-value {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+    .flow-card .fc-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary {
+      background: white; color: var(--site-dark);
+      border: 1px solid #c8dff0;
+    }
+    .btn-secondary:hover { background: var(--site-dark); color: white; }
+    .btn-primary {
+      background: var(--site-dark); color: white;
+      border: 1px solid var(--site-dark);
+    }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    /* ───── 網站 Footer ───── */
+    .site-footer {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .section-body { padding: 16px; }
+      .flow-grid { grid-template-columns: 1fr; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 網站 Header -->
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>攝護腺疾病</h1>
+  </header>
+  <div class="divider"></div>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link active" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <!-- 麵包屑 -->
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../prostate/index.html">攝護腺疾病</a>
+    <span>›</span>
+    雷射攝護腺剜除術
+  </div>
+
+  <!-- 主內容 -->
+  <div class="container">
+
+    <!-- 文章標題 -->
+    <div class="article-header">
+      <div class="header-tag">手術衛教</div>
+      <h2>雷射攝護腺剜除術</h2>
+      <p>Laser Enucleation of the Prostate (LEP)</p>
+    </div>
+
+    <!-- 什麼是雷射剜除術 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔬</div>
+        <h3>什麼是雷射攝護腺剜除術？</h3>
+      </div>
+      <div class="section-body">
+        <p>雷射攝護腺剜除術是一種外表沒有傷口的內視鏡手術。手術時，內視鏡經由尿道進入攝護腺尿道，找到肥大腺體與周圍外膜之間的交界面，接著以雷射作為切割剝離的工具，如同剝橘子一般，將肥大的攝護腺組織完整地從外膜上剝離，推入膀胱中；最後再使用組織絞碎機將其絞碎並吸出體外。</p>
+        <div class="box blue" style="margin-top:16px">
+          <span class="ico">💡</span>
+          <p>整個手術過程體表完全無傷口，透過自然腔道完成，是目前技術最成熟的攝護腺微創手術之一。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 優點 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">✅</div>
+        <h3>雷射剜除術的優點</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">安全性高　</span>以雷射同時切割與止血，出血量極少；手術以生理食鹽水為沖洗媒介，可避免傳統電刀手術可能引發的水中毒。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">手術效果好　</span>完整清除肥厚組織，徹底解除尿道阻塞，最大化改善尿流速率及排尿症狀。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">手術效率高　</span>直接剝離整顆肥厚組織，無須反覆刮除或汽化，手術效率優於其他術式。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">復發率最低　</span>由於清除組織量體最為完整，相較其他手術方式，術後需再次治療的機率最低。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 可能副作用 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">⚠️</div>
+        <h3>可能的副作用</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot red"></div>
+            <div><span class="item-label">逆行性射精　</span>術後約 80% 的患者，射精時精液會逆向進入膀胱，並隨尿液排出。此現象對身體健康並無影響，部分降壓藥物或泌尿科藥物也可能有類似副作用。</div>
+          </li>
+          <li>
+            <div class="item-dot amber"></div>
+            <div><span class="item-label">術後尿失禁　</span>在經驗豐富的醫師執刀下，長期尿失禁的發生率約 2%，相對少見。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 適合對象 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">👤</div>
+        <h3>什麼人適合雷射攝護腺剜除術？</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li><div class="item-dot"></div><div>希望手術效果最好，最大化改善尿流及排尿症狀者</div></li>
+          <li><div class="item-dot"></div><div>希望效果最持久，降低日後再次手術機會者</div></li>
+          <li><div class="item-dot"></div><div>可以接受自費手術者</div></li>
+          <li><div class="item-dot"></div><div>可以接受術後逆行性射精者</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 手術及住院流程 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🏥</div>
+        <h3>手術及住院流程</h3>
+      </div>
+      <div class="section-body">
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="fc-label">麻醉方式</div>
+            <div class="fc-value">半身麻醉或全身麻醉</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">手術時間</div>
+            <div class="fc-value">約 1 至 3 小時</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">住院天數</div>
+            <div class="fc-value">約 3 至 4 天</div>
+            <div class="fc-note">第一天入院、第二天手術、第四天拔除尿管順利排尿後出院</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">手術費用（自費）</div>
+            <div class="fc-value">約 16 至 18 萬元</div>
+            <div class="fc-note">麻醉及住院費用另計</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 術後注意事項 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">📋</div>
+        <h3>術後注意事項</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">初期正常現象　</span>體表雖無傷口，但攝護腺內部傷口一般需要術後四週方能復原。復原期間，排尿偶爾帶有輕微血尿、急尿感或短暫尿失禁，為尿道黏膜修復過程中的正常現象，會隨時間逐漸改善。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">充足飲水　</span>若無心臟或腎臟功能限制，每日建議飲水 2,000 至 2,500 毫升，以利沖刷尿道血塊或組織碎片。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">避免增加腹壓　</span>術後一個月內，請避免提重物及劇烈運動；飲食宜多攝取蔬果以預防便秘，避免用力解便造成傷口滲血。</div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- 返回按鈕 -->
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../prostate/index.html">← 回到攝護腺疾病</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <!-- 網站 Footer -->
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
