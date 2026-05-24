@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷氏保留攝護腺癌根除術｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --red: #a32d2d;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ───── 網站 Header ───── */
+    .site-header {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: white;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a8c8e8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
+    }
+
+    /* ───── 導覽列 ───── */
+    nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--site-dark);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    /* ───── 麵包屑 ───── */
+    .breadcrumb {
+      width: 100%;
+      max-width: 800px;
+      padding: 16px 20px 0;
+      font-size: 0.82rem;
+      color: #8aaac4;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--site-accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    /* ───── 主內容 ───── */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 24px 20px 60px;
+      flex: 1;
+    }
+
+    /* ───── 文章標題區 ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white;
+      padding: 44px 40px 36px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #c8e4f7;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 22px; font-weight: 700;
+      line-height: 1.5; margin-bottom: 10px;
+    }
+    .article-header .subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .article-header .author {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    /* ───── 內容區塊 ───── */
+    .section {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px; font-weight: 700; color: var(--blue);
+    }
+    .section-body { padding: 20px 24px; }
+    .section-body p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    /* ───── 項目清單 ───── */
+    .item-list { list-style: none; margin: 0; padding: 0; }
+    .item-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid #f0f3f6;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .item-list li:last-child { border-bottom: none; }
+    .item-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue-mid);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .item-dot.teal { background: var(--teal); }
+    .item-label {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ───── 警示框 ───── */
+    .box {
+      border-radius: 8px; padding: 14px 18px;
+      margin: 16px 0; display: flex; gap: 12px; align-items: flex-start;
+    }
+    .box .ico { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .box p { margin: 0; font-size: 14px; line-height: 1.85; }
+    .box.amber { background: var(--amber-light); border-left: 3px solid var(--amber); }
+    .box.amber p { color: #5a3c08; }
+    .box.blue { background: var(--blue-light); border-left: 3px solid var(--blue-mid); }
+    .box.blue p { color: #1a4a6b; }
+
+    /* ───── 流程卡片 ───── */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .flow-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .flow-card .fc-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; color: var(--blue-mid);
+      margin-bottom: 6px;
+    }
+    .flow-card .fc-value {
+      font-size: 14px; color: var(--text);
+      font-weight: 600; line-height: 1.6;
+    }
+    .flow-card .fc-note {
+      font-size: 12px; color: var(--text-muted);
+      margin-top: 5px; line-height: 1.65;
+    }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary {
+      background: white; color: var(--site-dark);
+      border: 1px solid #c8dff0;
+    }
+    .btn-secondary:hover { background: var(--site-dark); color: white; }
+    .btn-primary {
+      background: var(--site-dark); color: white;
+      border: 1px solid var(--site-dark);
+    }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    /* ───── 網站 Footer ───── */
+    .site-footer {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .section-body { padding: 16px; }
+      .flow-grid { grid-template-columns: 1fr; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 網站 Header -->
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>攝護腺疾病</h1>
+  </header>
+  <div class="divider"></div>
+
+  <!-- 導覽列 -->
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link active" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <!-- 麵包屑 -->
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../prostate/index.html">攝護腺疾病</a>
+    <span>›</span>
+    雷氏保留攝護腺癌根除術
+  </div>
+
+  <!-- 主內容 -->
+  <div class="container">
+
+    <!-- 文章標題 -->
+    <div class="article-header">
+      <div class="header-tag">手術衛教</div>
+      <h2>雷氏保留攝護腺癌根除術</h2>
+      <div class="subtitle">兼顧癌症治療與生活品質：達文西雷氏空間保留手術方式，<br>精準保留尿控與性功能</div>
+      <div class="author">何承勳 醫師</div>
+    </div>
+
+    <!-- 什麼是雷氏空間 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔬</div>
+        <h3>什麼是雷氏空間（Retzius space）？</h3>
+      </div>
+      <div class="section-body">
+        <p>在男性骨盆腔中，膀胱及攝護腺前方與恥骨之間，有一個充滿脂肪、韌帶與神經血管叢的解剖區域，醫學上稱為「雷氏空間（Retzius space）」。傳統的攝護腺癌根除術——不論是傳統開腹手術或常規達文西手術——都必須從前方切開並破壞雷氏空間，方能移除攝護腺。這種手術方式技術上較為容易，也被大多數外科醫師廣泛採用，然而卻有較高的機會導致患者術後承受長期尿失禁的風險。</p>
+      </div>
+    </div>
+
+    <!-- 什麼是雷氏空間保留術 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🤖</div>
+        <h3>什麼是雷氏空間保留術？</h3>
+      </div>
+      <div class="section-body">
+        <p>由於達文西機械手臂能提供精巧、靈活且多角度的手術操作視野，經驗豐富的醫師可改由攝護腺後方進行手術。在完整移除攝護腺的同時，保留前方的雷氏空間，以及附近與控尿相關的韌帶、筋膜、神經及血管，此一尖端技術即稱為「雷氏空間保留術（Retzius-sparing technique）」。</p>
+        <div class="box blue" style="margin-top:16px">
+          <span class="ico">💡</span>
+          <p>在我們大量的臨床手術案例中，幾乎所有患者術後均可免於尿失禁的困擾，且有很大的機會完好保留勃起神經與性功能。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 適合對象 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">👤</div>
+        <h3>什麼人適合這項手術？</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">局限性攝護腺癌　</span>腫瘤尚未顯著侵犯至攝護腺包膜外者。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">高度重視術後生活品質　</span>希望術後以最快速度恢復尿控、避免漏尿困擾者。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">注重性功能保留　</span>希望最大程度保留術後勃起功能者。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">經濟條件許可　</span>可接受達文西機械手臂手術自費項目者。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 手術限制 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">⚠️</div>
+        <h3>手術限制與注意事項</h3>
+      </div>
+      <div class="section-body">
+        <p>相較於傳統從前方破壞雷氏空間的手術方式，雷氏空間保留術在統計上有較高的術後切緣陽性率。</p>
+        <div class="box amber" style="margin-top:16px">
+          <span class="ico">📊</span>
+          <p>傳統手術切緣陽性率約 <strong>20%</strong>，雷氏空間保留術約 <strong>30%</strong>。每位患者的病情與腫瘤位置不同，是否適合採用本術式，應於術前與主治醫師進行詳細評估與討論。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 手術及住院流程 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🏥</div>
+        <h3>手術及住院流程</h3>
+      </div>
+      <div class="section-body">
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="fc-label">麻醉方式</div>
+            <div class="fc-value">全身麻醉</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">手術時間</div>
+            <div class="fc-value">約 1.5 至 3 小時</div>
+            <div class="fc-note">不含術前麻醉準備及術後恢復室觀察時間</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">住院天數</div>
+            <div class="fc-value">約 3 至 8 天</div>
+            <div class="fc-note">術後尿管通常放置 7 天；恢復良好者可於術後 2 至 3 日帶管返家，約一週後回診移除</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">手術費用（自費）</div>
+            <div class="fc-value">約 25 萬元</div>
+            <div class="fc-note">不含麻醉藥劑、術後止痛及住院病房等其他費用</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 返回按鈕 -->
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../prostate/index.html">← 回到攝護腺疾病</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <!-- 網站 Footer -->
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
