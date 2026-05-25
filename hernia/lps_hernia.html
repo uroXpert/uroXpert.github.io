@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微創內視鏡疝氣修補手術｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .site-header {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: white;
+      text-align: center;
+      padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #a8c8e8;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c);
+    }
+
+    nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 14px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--site-dark);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    .breadcrumb {
+      width: 100%;
+      max-width: 860px;
+      padding: 16px 20px 0;
+      font-size: 0.82rem;
+      color: #8aaac4;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--site-accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      padding: 24px 20px 60px;
+      flex: 1;
+    }
+
+    /* ───── 文章標題區 ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white;
+      padding: 44px 40px 36px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #c8e4f7;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 24px; font-weight: 700;
+      line-height: 1.45; margin-bottom: 10px;
+    }
+    .article-header .author {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    /* ───── 內容區塊 ───── */
+    .section {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+      overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sec-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blue); color: white;
+      font-size: 15px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 16px; font-weight: 700; color: var(--blue);
+    }
+    .section-body { padding: 20px 24px; }
+    .section-body p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.95;
+      margin-bottom: 12px;
+    }
+    .section-body p:last-child { margin-bottom: 0; }
+
+    /* ───── 項目清單 ───── */
+    .item-list { list-style: none; margin: 0; padding: 0; }
+    .item-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid #f0f3f6;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .item-list li:last-child { border-bottom: none; }
+    .item-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--blue-mid);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .item-dot.teal { background: var(--teal); }
+    .item-label {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ───── 比較表 ───── */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      min-width: 540px;
+    }
+    thead tr { background: var(--site-dark); color: white; }
+    thead th {
+      padding: 14px 16px;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    thead th:first-child { text-align: left; background: #152e4a; width: 28%; }
+    thead th:not(:first-child) { width: 36%; white-space: nowrap; }
+    .col-mini { background: #0f6b5a; }
+    .col-open { background: #5a3a1a; }
+    tbody tr { border-bottom: 1px solid #eef2f7; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #fafcfe; }
+    tbody tr:hover { background: #f0f5fb; }
+    td {
+      padding: 13px 16px;
+      color: var(--text-muted);
+      text-align: center;
+      vertical-align: top;
+      line-height: 1.75;
+    }
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--site-dark);
+      background: #f0f5fb;
+      font-size: 13px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-best { background: var(--teal-light); color: var(--teal); }
+    .badge-mid  { background: var(--amber-light); color: var(--amber); }
+
+    /* ───── 流程卡片 ───── */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .flow-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .flow-card .fc-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; color: var(--blue-mid);
+      margin-bottom: 6px;
+    }
+    .flow-card .fc-value {
+      font-size: 14px; color: var(--text);
+      font-weight: 600; line-height: 1.6;
+    }
+    .flow-card .fc-note {
+      font-size: 12px; color: var(--text-muted);
+      margin-top: 5px; line-height: 1.65;
+    }
+
+    /* ───── 提示框 ───── */
+    .box {
+      border-radius: 8px; padding: 14px 18px;
+      margin: 14px 0; display: flex; gap: 12px; align-items: flex-start;
+    }
+    .box .ico { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+    .box p { margin: 0; font-size: 14px; line-height: 1.85; }
+    .box.blue { background: var(--blue-light); border-left: 3px solid var(--blue-mid); }
+    .box.blue p { color: #1a4a6b; }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary {
+      background: white; color: var(--site-dark);
+      border: 1px solid #c8dff0;
+    }
+    .btn-secondary:hover { background: var(--site-dark); color: white; }
+    .btn-primary {
+      background: var(--site-dark); color: white;
+      border: 1px solid var(--site-dark);
+    }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    .site-footer {
+      width: 100%;
+      background-color: var(--site-dark);
+      color: #a8c8e8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .section-body { padding: 16px; }
+      .flow-grid { grid-template-columns: 1fr; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>疝氣</h1>
+  </header>
+  <div class="divider"></div>
+
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link active" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../hernia/index.html">疝氣</a>
+    <span>›</span>
+    微創內視鏡疝氣修補手術
+  </div>
+
+  <div class="container">
+
+    <div class="article-header">
+      <div class="header-tag">手術衛教</div>
+      <h2>微創內視鏡疝氣修補手術</h2>
+      <div class="author">何承勳 醫師</div>
+    </div>
+
+    <!-- 什麼是腹股溝疝氣 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔬</div>
+        <h3>什麼是腹股溝疝氣？</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot"></div>
+            <div><span class="item-label">症狀　</span>腹腔內器官（如小腸、脂肪）順著缺損向外突出，在腹股溝形成腫塊。</div>
+          </li>
+          <li>
+            <div class="item-dot"></div>
+            <div><span class="item-label">成因　</span>腹股溝處的腹壁肌肉及筋膜變薄或形成缺損，加上各種腹壓上升的情況（如攝護腺肥大、負重工作或運動、咳嗽或便秘用力），導致腹腔內器官從薄弱的腹壁處膨出。</div>
+          </li>
+          <li>
+            <div class="item-dot"></div>
+            <div><span class="item-label">根治方式　</span>手術修補是唯一根治方法。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 簡介微創手術 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🤖</div>
+        <h3>微創內視鏡疝氣手術簡介</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">手術原理　</span>僅需 3 個約 0.5 至 1 公分的微型小切口，利用內視鏡將脫垂組織推回，並在腹壁缺損內側鋪上人工網膜。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">核心技術　</span>採「無張力修補法」，原理如同「從室內補牆壁破洞」，運用體內腹壓自然固定網膜，無須額外縫合固定。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">術後優勢　</span>傷口極小、術後疼痛感大幅減輕、復發率極低（約 1%），且可透過同一傷口一併修補雙側疝氣。</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 比較表 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">📊</div>
+        <h3>微創內視鏡手術 vs 傳統開腹式手術</h3>
+      </div>
+      <div class="section-body" style="padding: 16px 24px;">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>比較項目</th>
+                <th class="col-mini">🟢 微創內視鏡手術</th>
+                <th class="col-open">🟤 傳統開腹式手術</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>傷口大小</td>
+                <td><span class="badge badge-best">3 個微型小孔</span><br><span style="font-size:12px;">每個約 0.5 至 1 公分</span></td>
+                <td><span class="badge badge-mid">約 6 至 8 公分</span></td>
+              </tr>
+              <tr>
+                <td>修補原理</td>
+                <td>從內側鋪設大面積網膜（10 × 15 公分），提供大面積保護，降低復發風險</td>
+                <td>從外側鋪設網膜，網膜面積較小</td>
+              </tr>
+              <tr>
+                <td>術後疼痛</td>
+                <td><span class="badge badge-best">疼痛感較低</span></td>
+                <td>疼痛感較強，可能有慢性疼痛</td>
+              </tr>
+              <tr>
+                <td>恢復時間</td>
+                <td><span class="badge badge-best">恢復較快</span></td>
+                <td>恢復較慢</td>
+              </tr>
+              <tr>
+                <td>雙側疝氣</td>
+                <td>可同時修補雙側，僅需同一組傷口</td>
+                <td>兩側皆需各自開口</td>
+              </tr>
+              <tr>
+                <td>費用</td>
+                <td>部分耗材自費，約 5 萬元</td>
+                <td>健保給付</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 手術住院流程 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🏥</div>
+        <h3>手術及住院流程</h3>
+      </div>
+      <div class="section-body">
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="fc-label">麻醉方式</div>
+            <div class="fc-value">全身麻醉</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">手術時間</div>
+            <div class="fc-value">約 30 分鐘至 1 小時</div>
+            <div class="fc-note">不含麻醉準備與恢復室觀察時間</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">住院天數</div>
+            <div class="fc-value">約 2 至 3 天</div>
+            <div class="fc-note">術後隔天傷口無虞、解尿順暢即可出院。部分患者經評估可不需住院。</div>
+          </div>
+          <div class="flow-card">
+            <div class="fc-label">手術費用</div>
+            <div class="fc-value">部分耗材自費</div>
+            <div class="fc-note">實際費用方案應於術前與主治醫師詳細討論</div>
+          </div>
+        </div>
+        <div class="box blue" style="margin-top:16px">
+          <span class="ico">💡</span>
+          <p>術後數日內即可恢復日常活動，傷口小、復原快，是目前腹股溝疝氣手術的主流選擇。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../hernia/index.html">← 回到疝氣</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
