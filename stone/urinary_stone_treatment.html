@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>泌尿道結石治療全指南｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg); color: var(--text);
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    }
+
+    .site-header {
+      width: 100%; background-color: var(--site-dark); color: white;
+      text-align: center; padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block; font-size: 1rem; font-weight: 400;
+      letter-spacing: 2px; color: #a8c8e8; text-decoration: none; margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 4px; }
+
+    .divider { width: 100%; height: 4px; background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c); }
+
+    nav {
+      width: 100%; background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block; padding: 14px 18px;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+      color: var(--site-dark); text-decoration: none;
+      border-bottom: 3px solid transparent; transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    .breadcrumb {
+      width: 100%; max-width: 900px; padding: 16px 20px 0;
+      font-size: 0.82rem; color: #8aaac4;
+      display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--site-accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    .container { width: 100%; max-width: 900px; padding: 24px 20px 60px; flex: 1; }
+
+    /* ───── 文章標題 ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white; padding: 44px 40px 36px; border-radius: 12px;
+      position: relative; overflow: hidden; margin-bottom: 20px;
+    }
+    .article-header::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28); color: #c8e4f7;
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 20px; margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif; font-size: 24px; font-weight: 700;
+      line-height: 1.45; margin-bottom: 10px;
+    }
+    .article-header .author { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600; letter-spacing: 2px; }
+
+    /* ───── 導言 ───── */
+    .intro-box {
+      background: white; border-radius: 12px; border: 1px solid var(--border);
+      padding: 22px 28px; margin-bottom: 20px;
+      font-size: 14px; color: var(--text-muted); line-height: 1.95;
+    }
+
+    /* ───── 治療方式區塊 ───── */
+    .section {
+      background: white; border-radius: 12px; border: 1px solid var(--border);
+      margin-bottom: 18px; overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px 14px; border-bottom: 1px solid var(--border);
+    }
+    .sec-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--blue); color: white; font-size: 15px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif; font-size: 16px; font-weight: 700; color: var(--blue);
+    }
+    .section-head .en-label {
+      font-size: 11px; color: #8aaac4; font-weight: 600; letter-spacing: 1px;
+      margin-left: 4px;
+    }
+    .section-body { padding: 20px 24px; }
+
+    /* ───── 三欄資訊格 ───── */
+    .info-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px;
+    }
+    .info-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 14px;
+    }
+    .info-card .ic-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      color: var(--blue-mid); margin-bottom: 5px;
+    }
+    .info-card .ic-value {
+      font-size: 13px; color: var(--text); font-weight: 600; line-height: 1.55;
+    }
+
+    /* ───── 清單 ───── */
+    .item-list { list-style: none; margin: 0; padding: 0; }
+    .item-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0; border-bottom: 1px solid #f0f3f6;
+      font-size: 14px; color: var(--text-muted); line-height: 1.85;
+    }
+    .item-list li:last-child { border-bottom: none; }
+    .item-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-mid); flex-shrink: 0; margin-top: 8px; }
+    .item-dot.teal { background: var(--teal); }
+    .item-label { font-weight: 700; color: var(--text); }
+
+    /* ───── 小標題 ───── */
+    .sub-title {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+      color: var(--blue-mid); margin: 16px 0 8px;
+    }
+
+    /* ───── 提示框 ───── */
+    .box {
+      border-radius: 8px; padding: 13px 16px; margin: 12px 0;
+      display: flex; gap: 11px; align-items: flex-start;
+    }
+    .box .ico { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .box p { margin: 0; font-size: 13.5px; line-height: 1.85; }
+    .box.blue { background: var(--blue-light); border-left: 3px solid var(--blue-mid); }
+    .box.blue p { color: #1a4a6b; }
+    .box.teal { background: var(--teal-light); border-left: 3px solid var(--teal); }
+    .box.teal p { color: #0a4a3a; }
+    .box.amber { background: var(--amber-light); border-left: 3px solid var(--amber); }
+    .box.amber p { color: #5a3c08; }
+
+    /* ───── 比較表 ───── */
+    .compare-section {
+      background: white; border-radius: 12px; border: 1px solid var(--border);
+      margin-bottom: 18px; overflow: hidden;
+    }
+    .compare-head {
+      background: var(--site-dark); color: white;
+      padding: 18px 24px;
+    }
+    .compare-head h3 {
+      font-family: 'Noto Serif TC', serif; font-size: 16px; font-weight: 700;
+    }
+    .table-wrapper { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 800px; }
+    thead tr { background: #152e4a; color: white; }
+    thead th {
+      padding: 12px 12px; text-align: center; font-weight: 600;
+      letter-spacing: 0.5px; line-height: 1.5; vertical-align: middle;
+    }
+    thead th:first-child { text-align: left; width: 14%; }
+    tbody tr { border-bottom: 1px solid #eef2f7; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: #fafcfe; }
+    tbody tr:hover { background: #f0f5fb; }
+    td {
+      padding: 12px 12px; color: var(--text-muted);
+      text-align: center; vertical-align: top; line-height: 1.75;
+    }
+    td:first-child {
+      text-align: left; font-weight: 700; color: var(--site-dark);
+      background: #f0f5fb; font-size: 12px;
+    }
+    .badge {
+      display: inline-block; padding: 2px 9px; border-radius: 20px;
+      font-size: 11px; font-weight: 700; margin-bottom: 3px;
+    }
+    .badge-best { background: var(--teal-light); color: var(--teal); }
+    .badge-good { background: var(--blue-light); color: var(--blue-mid); }
+    .badge-mid  { background: var(--amber-light); color: var(--amber); }
+    .badge-none { background: #f0f5fb; color: var(--site-dark); }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex; justify-content: space-between; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+      border-radius: 8px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+      text-decoration: none; transition: all 0.2s ease;
+    }
+    .btn-secondary { background: white; color: var(--site-dark); border: 1px solid #c8dff0; }
+    .btn-secondary:hover { background: var(--site-dark); color: white; }
+    .btn-primary { background: var(--site-dark); color: white; border: 1px solid var(--site-dark); }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    .site-footer {
+      width: 100%; background-color: var(--site-dark); color: #a8c8e8;
+      text-align: center; padding: 16px; font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .section-body { padding: 16px; }
+      .info-grid { grid-template-columns: 1fr 1fr; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>泌尿道結石</h1>
+  </header>
+  <div class="divider"></div>
+
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link active" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../stone/index.html">泌尿道結石</a>
+    <span>›</span>
+    泌尿道結石治療全指南
+  </div>
+
+  <div class="container">
+
+    <div class="article-header">
+      <div class="header-tag">治療指南</div>
+      <h2>泌尿道結石：從藥物治療到尖端微創手術</h2>
+      <div class="author">何承勳 醫師　2026.05</div>
+    </div>
+
+    <!-- 導言 -->
+    <div class="intro-box">
+      泌尿道結石是泌尿科最常見的疾病之一。在台灣等亞熱帶及熱帶國家，約十分之一的人口患有泌尿道結石，部分患者無明顯症狀，部分則可能伴隨疼痛、發燒或腎功能衰退等併發症。隨著醫療科技進步，結石治療已從過去動輒需要大開刀的時代，演進至今日以微創、甚至無創為主流的多元化精準醫療。臨床上醫師會依據結石的大小、位置、硬度以及患者的身體狀況，量身打造最適切的治療策略。
+    </div>
+
+    <!-- 1. 藥物治療 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">💊</div>
+        <h3>藥物治療 <span class="en-label">Medical Expulsive Therapy, MET</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用結石</div>
+            <div class="ic-value">輸尿管結石 &lt; 0.5 公分<br>遠端輸尿管結石</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">0.5 公分約 50%<br>更小或更遠端者更高</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">治療方式</div>
+            <div class="ic-value">門診保守治療<br>觀察期 2 至 4 週</div>
+          </div>
+        </div>
+        <div class="sub-title">常用藥物</div>
+        <ul class="item-list">
+          <li><div class="item-dot"></div><div><span class="item-label">甲型交感神經阻斷劑　</span>放鬆輸尿管下段平滑肌，降低痙攣絞痛感，並藉由增加管腔內徑促進結石自然排出。</div></li>
+          <li><div class="item-dot"></div><div><span class="item-label">非類固醇消炎止痛藥（NSAID）　</span>強效止痛，同時抑制前列腺素合成、減輕局部發炎、降低輸尿管平滑肌張力。注射劑型適用急性絞痛期，口服劑型可用於各階段止痛。</div></li>
+          <li><div class="item-dot"></div><div><span class="item-label">類嗎啡藥物　</span>用於對 NSAID 有禁忌症（如嚴重腎功能不全、胃潰瘍出血）的患者，或急性絞痛極度劇烈時的二線加強治療。</div></li>
+          <li><div class="item-dot"></div><div><span class="item-label">平滑肌抑制劑　</span>直接作用於輸尿管平滑肌受體，解除肌肉痙攣、降低管腔內壓，常與消炎止痛藥合併使用以加強效果。</div></li>
+        </ul>
+        <div class="box blue" style="margin-top:12px">
+          <span class="ico">📋</span>
+          <p>患者需每日按時服藥，並飲水 2,000 毫升以上。適度運動（如散步、跳躍）有助排石。若出現高燒、持續劇痛或尿路感染，須提前回診。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 體外震波 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">⚡</div>
+        <h3>體外震波碎石術 <span class="en-label">ESWL</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用結石</div>
+            <div class="ic-value">腎結石 &lt; 1.5 公分<br>輸尿管結石 &lt; 1 公分</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">60% 至 80%</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">麻醉／住院</div>
+            <div class="ic-value">通常不需麻醉<br>門診治療</div>
+          </div>
+        </div>
+        <ul class="item-list">
+          <li><div class="item-dot teal"></div><div><span class="item-label">治療原理　</span>利用設備在體外產生高能量震波，聚焦傳導至體內結石，將其震碎成砂粒般的微小碎片，再隨尿液自然排出。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">最大優勢　</span>完全無傷口，門診即可完成，單次療程約 60 分鐘。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">主要限制　</span>對較硬、體積較大或位於腎下盞的結石效果不佳，有時需接受兩次以上的治療。術後一兩日可能出現血尿。</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. 硬式輸尿管鏡 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔭</div>
+        <h3>硬式輸尿管鏡碎石術 <span class="en-label">URSL</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用結石</div>
+            <div class="ic-value">中段、下段輸尿管結石<br>建議 &lt; 1 公分</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">90% 以上</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">麻醉／住院</div>
+            <div class="ic-value">全身或半身麻醉<br>住院 0 至 1 天</div>
+          </div>
+        </div>
+        <ul class="item-list">
+          <li><div class="item-dot teal"></div><div><span class="item-label">治療原理　</span>利用直徑約 0.2 至 0.3 公分的細小內視鏡，逆行經由尿道、膀胱進入輸尿管，在清晰視野下以鈥雷射直接擊碎結石，視情況取出碎片或任由其自然排出。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">臨床優勢　</span>能即刻解除嚴重尿路阻塞與急性絞痛，體表完全無傷口，是技術發展極為成熟的標準手術。術後通常留置雙 J 導管。</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4. 軟式輸尿管鏡 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🌀</div>
+        <h3>軟式輸尿管鏡碎石手術 <span class="en-label">fURS / RIRS</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用結石</div>
+            <div class="ic-value">上段輸尿管結石<br>腎結石 ≤ 2 至 3 公分</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">95%</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">麻醉／住院</div>
+            <div class="ic-value">全身麻醉<br>住院約 2 天</div>
+          </div>
+        </div>
+        <ul class="item-list">
+          <li><div class="item-dot teal"></div><div><span class="item-label">技術特色　</span>鏡身可靈活彎曲高達 270°，能深入腎臟每個腎盞，搭配高階鈥雷射徹底擊碎結石，相較硬式鏡可到達上段輸尿管及各腎盞。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">適用族群　</span>完全走自然孔道、無皮膚傷口，不破壞腎臟實質，凝血功能異常或服用抗凝血藥物者亦適用。多顆或雙側腎結石可於同一次手術處理。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">術後恢復　</span>出院當日通常即可恢復日常文書工作，留置雙 J 導管於術後 1 至 2 週拔除。手術需自費約 12 萬元（不含麻醉及住院）。</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5. 經皮穿腎 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🎯</div>
+        <h3>經皮穿腎取石手術 <span class="en-label">PCNL</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用結石</div>
+            <div class="ic-value">大型腎結石 &gt; 2 至 3 公分<br>大型上段輸尿管結石</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">約 85%</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">麻醉／住院</div>
+            <div class="ic-value">全身麻醉<br>住院約 2 至 3 天</div>
+          </div>
+        </div>
+        <ul class="item-list">
+          <li><div class="item-dot teal"></div><div><span class="item-label">治療原理　</span>在超音波或 X 光導引下，由後腰部皮膚穿刺建立直徑約 0.5 至 1 公分的專用通道，套入腎臟鏡以高能量碎石設備擊碎並洗出大型結石。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">術後處置　</span>術後後腰留置腎造廔管、雙 J 導管及尿管。對廣泛分布於多個腎盞的結石，建議合併軟式輸尿管鏡進行雙鏡聯合手術。</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6. 雙鏡聯合 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔗</div>
+        <h3>雙鏡聯合手術 <span class="en-label">ECIRS</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用結石</div>
+            <div class="ic-value">複雜鹿角狀結石<br>大型腎結石合併輸尿管結石</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">效率最好<br>成功率最高</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">麻醉／住院</div>
+            <div class="ic-value">全身麻醉<br>住院約 4 至 5 天</div>
+          </div>
+        </div>
+        <ul class="item-list">
+          <li><div class="item-dot teal"></div><div><span class="item-label">技術整合　</span>完美結合 PCNL 與軟式輸尿管鏡，由兩位醫師同時操作，裡應外合上下夾擊。利用軟鏡靈活性清理盲角結石，並經皮穿腎通道快速洗出碎石。</div></li>
+          <li><div class="item-dot teal"></div><div><span class="item-label">相較傳統 PCNL　</span>可顯著縮小後腰通道直徑，降低出血風險，同時大幅提高複雜結石的單次清除率，減少患者重複手術的痛苦。自費約 12 萬元（不含麻醉及住院）。</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. 腹腔鏡截石 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔧</div>
+        <h3>腹腔鏡截石手術 <span class="en-label">Laparoscopic Ureterolithotomy</span></h3>
+      </div>
+      <div class="section-body">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="ic-label">適用情況</div>
+            <div class="ic-value">內視鏡手術無法處理的<br>頑固性結石</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">預期清除率</div>
+            <div class="ic-value">極高<br>直接切開取出</div>
+          </div>
+          <div class="info-card">
+            <div class="ic-label">麻醉／住院</div>
+            <div class="ic-value">全身麻醉<br>住院約 3 至 5 天</div>
+          </div>
+        </div>
+        <ul class="item-list">
+          <li><div class="item-dot"></div><div><span class="item-label">適用對象　</span>體積極大且長期嵌頓、黏膜嚴重息肉包裹導致內視鏡無法通過的輸尿管結石；或體外震波及各項內視鏡手術皆失敗的頑固性結石；或需同時進行輸尿管整形重建者。</div></li>
+          <li><div class="item-dot"></div><div><span class="item-label">治療原理　</span>在腹部或後腹腔切開 3 至 4 個小孔，套入腹腔鏡器械直接切開輸尿管或腎盂，將整顆結石夾出，隨後留置雙 J 導管並精密縫合。術後留置腹腔引流管觀察是否有尿汁滲漏。</div></li>
+        </ul>
+        <div class="box amber" style="margin-top:12px">
+          <span class="ico">⚠️</span>
+          <p>在各項微創內視鏡手術發展完備的今日，腹腔鏡截石已降為後線替代方案，但在特殊複雜情況下仍不可或缺。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 比較表 -->
+    <div class="compare-section">
+      <div class="compare-head">
+        <h3>各治療方式核心比較表</h3>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>體外震波碎石術<br>ESWL</th>
+              <th>硬式輸尿管鏡<br>URSL</th>
+              <th>軟式輸尿管鏡<br>fURS / RIRS</th>
+              <th>經皮穿腎取石<br>PCNL</th>
+              <th>雙鏡聯合<br>ECIRS</th>
+              <th>腹腔鏡截石<br>Laparoscopic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>傷口</td>
+              <td><span class="badge badge-best">無傷口</span></td>
+              <td><span class="badge badge-best">無皮膚傷口</span></td>
+              <td><span class="badge badge-best">無皮膚傷口</span></td>
+              <td><span class="badge badge-good">微創小洞</span><br><span style="font-size:11px">後腰 0.5–1 公分</span></td>
+              <td><span class="badge badge-good">微創小洞＋自然孔道</span></td>
+              <td><span class="badge badge-mid">數個微創小孔</span></td>
+            </tr>
+            <tr>
+              <td>最佳適用結石</td>
+              <td>腎結石 &lt; 1.5 公分<br>輸尿管 &lt; 1 公分</td>
+              <td>中下段輸尿管<br>建議 &lt; 1 公分</td>
+              <td>上段輸尿管<br>腎結石 ≤ 2–3 公分</td>
+              <td>大型腎結石<br>&gt; 2–3 公分</td>
+              <td>複雜鹿角狀結石<br>大型合併輸尿管結石</td>
+              <td>極大卡死輸尿管結石<br>其他手術失敗者</td>
+            </tr>
+            <tr>
+              <td>預期清除率</td>
+              <td>60–80%</td>
+              <td><span class="badge badge-best">90% 以上</span></td>
+              <td><span class="badge badge-best">95%</span></td>
+              <td>約 85%</td>
+              <td><span class="badge badge-best">最高</span></td>
+              <td><span class="badge badge-best">極高</span></td>
+            </tr>
+            <tr>
+              <td>麻醉／住院</td>
+              <td>通常不需麻醉<br>門診治療</td>
+              <td>全身或半身麻醉<br>住院 0–1 天</td>
+              <td>全身麻醉<br>住院約 2 天</td>
+              <td>全身麻醉<br>住院約 2–3 天</td>
+              <td>全身麻醉<br>住院約 4–5 天</td>
+              <td>全身麻醉<br>住院約 3–5 天</td>
+            </tr>
+            <tr>
+              <td>備註</td>
+              <td>結石過硬或位於腎下盞時效果較差，可能需多次治療</td>
+              <td>能即刻解除嚴重阻塞與急性絞痛</td>
+              <td>鏡身靈活，不破壞腎功能；凝血異常者亦適用</td>
+              <td>術後留置腎造廔管；廣泛結石建議合併軟鏡</td>
+              <td>可縮小後腰通道直徑，降低出血風險</td>
+              <td>後線替代方案；適合需同時進行輸尿管整形重建者</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../stone/index.html">← 回到泌尿道結石</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
