@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>膀胱癌治療簡介｜泌尿醫學專業網站</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap');
+
+    :root {
+      --site-dark: #1a3a5c;
+      --site-accent: #4a90d9;
+      --blue: #1a5c8a;
+      --blue-mid: #2278b5;
+      --blue-light: #e8f3fb;
+      --teal: #0f7c6b;
+      --teal-light: #e2f4f1;
+      --amber: #b87a10;
+      --amber-light: #fdf4e3;
+      --purple: #6a3fa0;
+      --purple-light: #f3eefa;
+      --red: #a32d2d;
+      --text: #1e2831;
+      --text-muted: #4a5a6a;
+      --border: #d0dce8;
+      --bg: #f5f8fb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+      background: var(--bg); color: var(--text);
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    }
+
+    .site-header {
+      width: 100%; background-color: var(--site-dark); color: white;
+      text-align: center; padding: 36px 20px 28px;
+    }
+    .site-header a.site-title {
+      display: inline-block; font-size: 1rem; font-weight: 400;
+      letter-spacing: 2px; color: #a8c8e8; text-decoration: none; margin-bottom: 10px;
+    }
+    .site-header a.site-title:hover { color: white; }
+    .site-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 4px; }
+
+    .divider { width: 100%; height: 4px; background: linear-gradient(90deg, #1a3a5c, #4a90d9, #1a3a5c); }
+
+    nav {
+      width: 100%; background-color: #ffffff;
+      border-bottom: 1px solid #c8dff0;
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    .nav-link {
+      display: inline-block; padding: 14px 18px;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+      color: var(--site-dark); text-decoration: none;
+      border-bottom: 3px solid transparent; transition: all 0.2s ease;
+    }
+    .nav-link:hover { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+    .nav-link.active { color: var(--site-accent); border-bottom-color: var(--site-accent); }
+
+    .breadcrumb {
+      width: 100%; max-width: 860px; padding: 16px 20px 0;
+      font-size: 0.82rem; color: #8aaac4;
+      display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--site-accent); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: #aac0d4; }
+
+    .container { width: 100%; max-width: 860px; padding: 24px 20px 60px; flex: 1; }
+
+    /* ───── 文章標題 ───── */
+    .article-header {
+      background: linear-gradient(135deg, #0d3f6b 0%, #1a5c8a 55%, #2278b5 100%);
+      color: white; padding: 44px 40px 36px; border-radius: 12px;
+      position: relative; overflow: hidden; margin-bottom: 20px;
+    }
+    .article-header::before {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.04);
+    }
+    .header-tag {
+      display: inline-block; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28); color: #c8e4f7;
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      padding: 3px 12px; border-radius: 20px; margin-bottom: 12px;
+    }
+    .article-header h2 {
+      font-family: 'Noto Serif TC', serif; font-size: 24px; font-weight: 700;
+      line-height: 1.45; margin-bottom: 10px;
+    }
+    .article-header .author { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 600; letter-spacing: 2px; }
+
+    /* ───── 導言 ───── */
+    .intro-box {
+      background: white; border-radius: 12px; border: 1px solid var(--border);
+      padding: 22px 28px; margin-bottom: 24px;
+      font-size: 14px; color: var(--text-muted); line-height: 1.95;
+    }
+
+    /* ───── 分期階段 Banner ───── */
+    .stage-banner {
+      border-radius: 12px; padding: 18px 24px; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .stage-banner.s1 { background: var(--teal-light); border: 1px solid #9fd6cc; }
+    .stage-banner.s2 { background: var(--amber-light); border: 1px solid #f0d090; }
+    .stage-banner.s3 { background: #fdeaea; border: 1px solid #f0b0b0; }
+    .stage-badge {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.4rem; font-weight: 700; flex-shrink: 0; min-width: 60px;
+    }
+    .stage-banner.s1 .stage-badge { color: var(--teal); }
+    .stage-banner.s2 .stage-badge { color: var(--amber); }
+    .stage-banner.s3 .stage-badge { color: var(--red); }
+    .stage-info .stage-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 15px; font-weight: 700; margin-bottom: 4px;
+    }
+    .stage-banner.s1 .stage-title { color: var(--teal); }
+    .stage-banner.s2 .stage-title { color: var(--amber); }
+    .stage-banner.s3 .stage-title { color: var(--red); }
+    .stage-info .stage-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+    /* ───── 內容區塊 ───── */
+    .section {
+      background: white; border-radius: 12px; border: 1px solid var(--border);
+      margin-bottom: 14px; overflow: hidden;
+    }
+    .section-head {
+      display: flex; align-items: center; gap: 12px;
+      padding: 15px 22px 13px; border-bottom: 1px solid var(--border);
+      background: #fafcfe;
+    }
+    .sec-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--blue); color: white; font-size: 13px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .section-head h3 {
+      font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 700; color: var(--blue);
+    }
+    .section-body { padding: 18px 22px; }
+
+    /* ───── 分期定義格 ───── */
+    .tstage-grid {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px;
+    }
+    .tstage-card {
+      flex: 1; min-width: 130px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 14px;
+    }
+    .tstage-card .tc-stage {
+      font-size: 15px; font-weight: 700; color: var(--blue-mid); margin-bottom: 5px;
+    }
+    .tstage-card .tc-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.65; }
+
+    /* ───── 清單 ───── */
+    .item-list { list-style: none; margin: 0; padding: 0; }
+    .item-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid #f0f3f6;
+      font-size: 14px; color: var(--text-muted); line-height: 1.85;
+    }
+    .item-list li:last-child { border-bottom: none; }
+    .item-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-mid); flex-shrink: 0; margin-top: 8px; }
+    .item-dot.teal { background: var(--teal); }
+    .item-dot.purple { background: var(--purple); }
+    .item-dot.amber { background: var(--amber); }
+    .item-label { font-weight: 700; color: var(--text); }
+
+    /* ───── 藥物標籤 ───── */
+    .drug-tag {
+      display: inline-block; background: var(--purple-light); color: var(--purple);
+      font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 4px;
+      letter-spacing: 0.5px; margin: 0 2px;
+    }
+
+    /* ───── 條件清單（縮排） ───── */
+    .cond-list { list-style: none; margin: 10px 0 0 0; padding: 0; }
+    .cond-list li {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 13px; color: var(--text-muted); line-height: 1.75;
+      padding: 5px 0; border-bottom: 1px solid #f5f7fa;
+    }
+    .cond-list li:last-child { border-bottom: none; }
+    .cond-list li::before {
+      content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+    }
+
+    /* ───── 提示框 ───── */
+    .box {
+      border-radius: 8px; padding: 13px 16px; margin: 12px 0;
+      display: flex; gap: 11px; align-items: flex-start;
+    }
+    .box .ico { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .box p { margin: 0; font-size: 13.5px; line-height: 1.85; }
+    .box.teal { background: var(--teal-light); border-left: 3px solid var(--teal); }
+    .box.teal p { color: #0a4a3a; }
+    .box.blue { background: var(--blue-light); border-left: 3px solid var(--blue-mid); }
+    .box.blue p { color: #1a4a6b; }
+    .box.amber { background: var(--amber-light); border-left: 3px solid var(--amber); }
+    .box.amber p { color: #5a3c08; }
+    .box.purple { background: var(--purple-light); border-left: 3px solid var(--purple); }
+    .box.purple p { color: #3a1a6a; }
+
+    /* ───── 存活率卡片 ───── */
+    .survival-card {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px 18px; margin-top: 12px;
+    }
+    .survival-rate { font-family: 'Noto Serif TC', serif; font-size: 1.6rem; font-weight: 700; }
+    .survival-rate.green { color: var(--teal); }
+    .survival-rate.amber { color: var(--amber); }
+    .survival-label { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ───── 返回按鈕 ───── */
+    .nav-buttons {
+      display: flex; justify-content: space-between; gap: 12px; margin-top: 32px; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+      border-radius: 8px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;
+      text-decoration: none; transition: all 0.2s ease;
+    }
+    .btn-secondary { background: white; color: var(--site-dark); border: 1px solid #c8dff0; }
+    .btn-secondary:hover { background: var(--site-dark); color: white; }
+    .btn-primary { background: var(--site-dark); color: white; border: 1px solid var(--site-dark); }
+    .btn-primary:hover { background: var(--site-accent); border-color: var(--site-accent); }
+
+    .site-footer {
+      width: 100%; background-color: var(--site-dark); color: #a8c8e8;
+      text-align: center; padding: 16px; font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-link { padding: 10px 10px; font-size: 0.8rem; }
+      .article-header { padding: 28px 20px; }
+      .section-body { padding: 14px 16px; }
+      .tstage-grid { flex-direction: column; }
+      .nav-buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-title" href="../index.html">← 泌尿醫學專業網站</a>
+    <h1>泌尿道腫瘤</h1>
+  </header>
+  <div class="divider"></div>
+
+  <nav>
+    <a class="nav-link" href="../news/index.html">最新消息</a>
+    <a class="nav-link" href="../prostate/index.html">攝護腺疾病</a>
+    <a class="nav-link active" href="../tumor/index.html">泌尿道腫瘤</a>
+    <a class="nav-link" href="../stone/index.html">泌尿道結石</a>
+    <a class="nav-link" href="../hernia/index.html">疝氣</a>
+    <a class="nav-link" href="../others/index.html">其他泌尿醫學</a>
+    <a class="nav-link" href="../doctor/index.html">醫師介紹</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">泌尿醫學專業網站</a>
+    <span>›</span>
+    <a href="../tumor/index.html">泌尿道腫瘤</a>
+    <span>›</span>
+    膀胱癌治療簡介
+  </div>
+
+  <div class="container">
+
+    <div class="article-header">
+      <div class="header-tag">腫瘤治療</div>
+      <h2>膀胱癌治療簡介</h2>
+      <div class="author">何承勳 醫師　2026.06</div>
+    </div>
+
+    <div class="intro-box">
+      膀胱癌是泌尿系統常見的惡性腫瘤，治療方案的擬定高度仰賴精確的臨床與病理分期。臨床上主要依據腫瘤侵犯膀胱壁的深度（T Stage）及是否發生遠端轉移，將膀胱癌的治療策略劃分為以下三個關鍵階段。
+    </div>
+
+    <!-- ═══ 第一階段 ═══ -->
+    <div class="stage-banner s1">
+      <div class="stage-badge">第一階段</div>
+      <div class="stage-info">
+        <div class="stage-title">T0 – T1｜非肌肉層浸潤性膀胱癌</div>
+        <div class="stage-desc">早期膀胱癌，腫瘤尚未侵犯膀胱壁肌肉層，以保留膀胱為核心治療原則</div>
+      </div>
+    </div>
+
+    <!-- 分期定義 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">📋</div>
+        <h3>各分期定義</h3>
+      </div>
+      <div class="section-body">
+        <div class="tstage-grid">
+          <div class="tstage-card">
+            <div class="tc-stage">T0</div>
+            <div class="tc-desc">檢體中未發現惡性腫瘤（如切除後追蹤）</div>
+          </div>
+          <div class="tstage-card">
+            <div class="tc-stage">Ta</div>
+            <div class="tc-desc">腫瘤局限於乳頭狀黏膜層</div>
+          </div>
+          <div class="tstage-card">
+            <div class="tc-stage">T1</div>
+            <div class="tc-desc">腫瘤已侵入黏膜下層，但尚未侵犯膀胱壁肌肉層</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主要治療 -->
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🔬</div>
+        <h3>主要治療方式</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot teal"></div>
+            <div><span class="item-label">經尿道膀胱腫瘤切除術（TURBT）　</span>醫師利用內視鏡經尿道進入膀胱，以雷射或電刀完整切除可見腫瘤，兼具治療與病理採樣的雙重目的。</div>
+          </li>
+          <li>
+            <div class="item-dot teal"></div>
+            <div>
+              <span class="item-label">膀胱內藥物灌注治療　</span>早期膀胱癌術後復發率較高，對中高風險患者須安排膀胱內灌藥治療：
+              <ul class="cond-list" style="margin-top:8px">
+                <li><strong>卡介苗（BCG）</strong>：免疫療法，活化膀胱黏膜免疫反應，對預防復發與疾病惡化效果卓著</li>
+                <li><strong>化學治療藥物</strong>（如 Mitomycin-C 或 Epirubicin）：直接殺滅局部癌細胞</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="box teal" style="margin-top:12px">
+          <span class="ico">📊</span>
+          <p>此階段五年存活率極高（通常達 85% 至 95% 以上），惟復發率相對較高。術後須嚴格遵循追蹤計畫，每三個月定期接受膀胱鏡檢查與尿液細胞學檢驗。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 第二階段 ═══ -->
+    <div class="stage-banner s2" style="margin-top:24px">
+      <div class="stage-badge">第二階段</div>
+      <div class="stage-info">
+        <div class="stage-title">T2 – T3｜肌肉層浸潤性膀胱癌</div>
+        <div class="stage-desc">癌細胞已深入侵犯膀胱壁肌肉層，治療策略須轉為根除性或全身性治療</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">🏥</div>
+        <h3>主要治療方式</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot amber"></div>
+            <div><span class="item-label">根除性膀胱切除術（Radical Cystectomy）　</span>本階段標準治療，完整切除膀胱、周圍淋巴結及鄰近器官（男性含攝護腺，女性含子宮及卵巢）。術後利用患者自身小腸進行尿路分流重建，可選擇體外人工造口（迴腸導管）或體內新膀胱重建。</div>
+          </li>
+          <li>
+            <div class="item-dot amber"></div>
+            <div><span class="item-label">前導性化學治療（Neoadjuvant Chemotherapy）　</span>手術前先完成數個療程的全身靜脈化療。臨床研究證實能有效縮小腫瘤、提高手術完全切除率，並預先消滅潛在微轉移病灶，顯著改善整體存活率。</div>
+          </li>
+          <li>
+            <div class="item-dot amber"></div>
+            <div>
+              <span class="item-label">膀胱保留療法（三合一療法）　</span>先進行最大程度的 TURBT，再合併同步化學治療與放射線治療。須經審慎評估，依據 NCCN 臨床指引，理想適用條件包括：
+              <ul class="cond-list" style="margin-top:8px">
+                <li>腫瘤體積較小（通常 &lt; 5 公分）且為單一病灶</li>
+                <li>未合併原位癌（CIS）</li>
+                <li>未造成明顯腎水腫</li>
+                <li>內視鏡下可將腫瘤最大程度切除乾淨</li>
+                <li>腎功能足以承受同步化療</li>
+              </ul>
+              <div class="box blue" style="margin-top:10px">
+                <span class="ico">💡</span>
+                <p>此療法亦適用於堅決拒絕切除膀胱，或因高齡、重大共病而無法承受根除性手術的患者，可作為替代的首選方案。</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="box amber" style="margin-top:4px">
+          <span class="ico">📊</span>
+          <p>若能及時接受規範化的前導化療加上根除性手術，五年存活率仍可達 50% 至 70% 左右。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 第三階段 ═══ -->
+    <div class="stage-banner s3" style="margin-top:24px">
+      <div class="stage-badge">第三階段</div>
+      <div class="stage-info">
+        <div class="stage-title">T4 或遠端轉移｜晚期與轉移性膀胱癌</div>
+        <div class="stage-desc">腫瘤廣泛侵犯鄰近骨盆腔結構，或癌細胞已播散至遠端器官，以延長存活、控制疾病、維護生活品質為治療優先目標</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <div class="sec-icon">💊</div>
+        <h3>主要治療方式</h3>
+      </div>
+      <div class="section-body">
+        <ul class="item-list">
+          <li>
+            <div class="item-dot purple"></div>
+            <div>
+              <span class="item-label">抗體藥物複合體聯合免疫治療（ADC + Immunotherapy）　</span>依據最新 NCCN 臨床指引的強烈建議，此聯合療法已列為晚期與轉移性膀胱癌的第一線首選方案（Preferred Category 1）。
+              <div style="margin-top:8px; font-size:13px; color:var(--text-muted);">
+                代表藥物：<span class="drug-tag">Enfortumab Vedotin</span> 聯合 <span class="drug-tag">Pembrolizumab</span>
+              </div>
+              <div style="margin-top:6px; font-size:13px; color:var(--text-muted);">此創新「無化療」療法突破傳統治療瓶頸，帶來更優異的疾病控制率與客觀緩解率。</div>
+            </div>
+          </li>
+          <li>
+            <div class="item-dot purple"></div>
+            <div><span class="item-label">全身性化學治療（傳統第一線）　</span>針對無法使用新型聯合療法的特定患者，以含鉑類（Cisplatin 為基底）的組合化療作為傳統標準治療。</div>
+          </li>
+          <li>
+            <div class="item-dot purple"></div>
+            <div><span class="item-label">維持性免疫治療（Maintenance Immunotherapy）　</span>若第一線化療後病情達到穩定或緩解，建議後續銜接免疫檢查點抑制劑（如 <span class="drug-tag">Avelumab</span>）進行維持治療，以延長療效並延緩復發。</div>
+          </li>
+          <li>
+            <div class="item-dot purple"></div>
+            <div><span class="item-label">精準標靶治療　</span>針對具有特定基因變異（如 FGFR3 基因突變或融合）的患者，可使用口服 FGFR 抑制劑（如 <span class="drug-tag">Erdafitinib</span>），精準阻斷腫瘤細胞的生長訊號。</div>
+          </li>
+          <li>
+            <div class="item-dot purple"></div>
+            <div><span class="item-label">姑息性局部治療　</span>若因膀胱腫瘤引發嚴重血尿、劇烈疼痛或尿路阻塞，可安排局部放射線治療或姑息性手術，積極緩解症狀、提升生活品質。</div>
+          </li>
+        </ul>
+        <div class="box purple" style="margin-top:12px">
+          <span class="ico">🔬</span>
+          <p>晚期轉移性膀胱癌的預後雖具挑戰，但在 ADC 聯合免疫治療、化學治療、維持性免疫療法及精準標靶治療等多元整合下，患者整體存活期已獲得顯著且突破性的延長。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <a class="btn btn-secondary" href="../tumor/index.html">← 回到泌尿道腫瘤</a>
+      <a class="btn btn-primary" href="../index.html">回到首頁 →</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    © 2026 泌尿醫學專業網站　新光醫院 何承勳 主任
+  </footer>
+
+</body>
+</html>
